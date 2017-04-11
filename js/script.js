@@ -33,7 +33,9 @@ $(function() {
 
 			//Dodawanie karteczki
 			$columnAddCard.click(function() {
-				self.addCard(new Card(prompt('Wpisz nazwę karty')));
+				$('.info').html('');
+				var cardName = prompt('Wpisz nazwę karty');
+				(cardName === null || cardName == '') ? $('.info').html('Nazwa zadania nie może być pusta') : self.addCard(new Card(cardName));
 			});
 
 			//Tworzenie kolumny
@@ -99,9 +101,13 @@ $(function() {
 	}
 
 	$('.create-column').click(function() {
+		$('.info').html('');
 		var name = prompt('Wpisz nazwę kolumny:');
 		var column = new Column(name);
-		board.addColumn(column);
+	
+		(name === null || name == '') ? $('.info').html('Nazwa kolumny nie może być pusta') : board.addColumn(column);
+
+		// board.addColumn(column);
 	});
 
 	//Tworzenie kolumn

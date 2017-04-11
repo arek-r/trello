@@ -113,3 +113,11 @@ html {
 .button-container button {
 	margin: 1px;
 }
+
+.info {
+	margin-top: 5px;
+	padding: 10px;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0.5px;
+}
